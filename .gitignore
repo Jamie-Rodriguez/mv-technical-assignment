@@ -1,0 +1,3 @@
+# Don't commit local Python virtual environments
+server-env/
+cli-app-env/
