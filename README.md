@@ -29,7 +29,7 @@ pip install -r requirements.txt
 conda create --name <env_name> --file requirements.txt
 ```
 
-To run:
+To run the app:
 ```bash
 python3 cli-app.py
 ```
@@ -57,7 +57,7 @@ This project has the following architecture:
 +------------+
 ```
 
-To be explicit, the project uses *Docker Compose* to spin up the web API and database inside Docker containers.
+To be explicit, this project uses *Docker Compose* to spin up the database, web API and frontend site inside Docker containers.
 
 Meanwhile the CLI app is designed to just be run on the local machine.
 
@@ -77,9 +77,9 @@ Note: I have made all the columns nullable (except the primary key, `Employee Nu
 # Web Server
 I chose to write the web server using the Python framework *Flask*, mainly because I haven't created a server in Python before and it was the simplest to get started with quickly.
 
-*Note*: The documentation states that server Flask provides is not appropriate for production; do not fear 'cause in production you would have a *real* web server like *Nginx* in front of it anyway to handle SSL, CSP and potentially other things like load balancing etc.
+*Note*: The web server is "*publically*" exposed on port 8080, but internally in the container it's running with Flask's native port 5000.
 
-*Note 2*: The web server is "*publically*" exposed on port 8080, but internally in the container it's running with Flask's native port 5000.
+*Note 2*: The documentation states that server Flask provides is not appropriate for production; do not fear 'cause in production you would have a *real* web server like *Nginx* in front of it anyway to handle SSL, CSP and potentially other things like load balancing etc.
 
 ## Endpoints
 
