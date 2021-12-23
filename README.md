@@ -92,7 +92,7 @@ How much attrition is there?
 
 Calculated as the percentage of employees that had attrition, out of the total employees.
 
-Example cURL request:
+#### Example cURL request:
 ```bash
 curl http://localhost:8080/attrition
 ```
@@ -104,7 +104,7 @@ GET http://localhost:8080/attrition-overtime
 
 I wanted to see if the employees being overworked could potentially be a cause of attrition. i.e. the percentage of employees that worked overtime, out of the total number of employees *that had attrition*.
 
-Example cURL request:
+#### Example cURL request:
 ```bash
 curl http://localhost:8080/attrition-overtime
 ```
@@ -119,7 +119,7 @@ As it says on the tin. Allows the user to add an employee to the database and re
 
 If you "add" an employee that already exists, the operation will update the employee's `attrition` status i.e. it is an *upsert* operation.
 
-Example cURL request:
+#### Example cURL request:
 ```bash
 curl --request POST \
     --header "Content-Type: application/json" \
