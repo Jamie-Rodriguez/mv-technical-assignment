@@ -13,7 +13,7 @@ These are usually already present on any developer's system, but just in case:
 Once you have these requirements, we are ready to go!
 
 # Instructions
-## Start up the web API and database
+## Start up the database, web API server and frontend site
 Simply run `start-docker-compose.sh` - told you it was easy!
 
 When finished, enter `Control + C` to stop the process. The Bash script should gracefully stop and remove the Docker containers for you.
