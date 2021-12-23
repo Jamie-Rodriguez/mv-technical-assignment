@@ -59,9 +59,4 @@ const addEmployee = async event => {
 
 getAttritionButton.addEventListener('click', getAttrition);
 getAttritionOvertimeButton.addEventListener('click', getAttritionOvertime);
-// ??
 addEmployeeButton.addEventListener('click', async event => addEmployee(event));
-
-// addEmployeeForm.addEventListener('submit', async function(event) {
-//     await addEmployee(event, this)
-// })
