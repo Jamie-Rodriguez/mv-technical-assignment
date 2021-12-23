@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-au">
+  <head>
+    <title>Web-UI</title>
+    <meta charset="utf-8">
+    <meta name="description" content="A web UI for the Python server">
+    <meta name="author" content="Jamie Rodríguez">
+    <meta name="date" content="2021-12-23">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="requests.js" type="text/javascript" defer></script>
+  </head>
+  <body>
+    <div>
+      <button type="button" id="getAttrition">Get attrition</button>
+      <span id="attrition"></span>
+    </div>
+    <div>
+      <button type="button" id="getAttritionOvertime">Get overtime attrition</button>
+      <span id="attritionOvertime"></span>
+    </div>
+    <!-- Don't post this as form data because I didn't implement that on the server -->
+    <!-- Though this raises the question of which is faster to implement;
+       - reworking this form to submit a JSON POST request
+       or
+       - add the ability for the server to accept both JSON and form POST request
+       ???
+    -->
+    <form id="addEmployeeForm" action="">
+      <fieldset>
+        <legend>Add an employee:</legend>
+        <label for="employee-number">Employee number: <input id="employee-number"
+                                                             name="employeeNumber"
+                                                             type="number"
+                                                             min="1"
+                                                             step="1"
+                                                             value="123"
+                                                             required></label>
+        <label for="employee-attrition">Attrition? <input id="employee-attrition"
+                                                          name="attrition"
+                                                          type="checkbox"
+                                                          checked></label>
+        <button id="addEmployee">Add employee</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

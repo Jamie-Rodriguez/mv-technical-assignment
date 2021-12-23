@@ -1,0 +1,32 @@
+:root {
+    --font: "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --size: 2rem;
+}
+body {
+    font-family: var(--font);
+    font-size: var(--size);
+    margin: 1.3rem;
+    line-height: 4rem;
+}
+button {
+    font-family: var(--font);
+    font-size: var(--size);
+    width: 15rem;
+}
+label {
+    display: block;
+    font-family: var(--font);
+    font-size: var(--size);
+}
+/* Used for the percentages to the right of the attrition buttons*/
+span {
+    vertical-align: top;
+}
+input[type=checkbox] {
+    vertical-align: middle;
+    transform: scale(1.5);
+}
+input[type=number] {
+    font-size: var(--size);
+    width: 10rem;
+}

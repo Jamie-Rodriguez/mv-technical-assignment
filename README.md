@@ -14,7 +14,7 @@ Once you have these requirements, we are ready to go!
 
 # Instructions
 ## Start up the web API and database
-Simply run `start-docker-compose.sh` - told you it was easy.
+Simply run `start-docker-compose.sh` - told you it was easy!
 
 When finished, enter `Control + C` to stop the process. The Bash script should gracefully stop and remove the Docker containers for you.
 
@@ -38,7 +38,13 @@ python3 cli-app.py
 This project has the following architecture:
 ```
   Containers     Local Machine
-  +---------+    +------------+
++-------------+
+| Web UI Site |
+|   (Nginx)   |
+|     80      |
++------+------+
+       |
+  +----V----+    +------------+
   | Web API <----+  CLI App   |
   | (Flask) |    | (Python 3) |
   |  8080   |    +------------+
@@ -127,3 +133,17 @@ python3 cli-app.py
 ```
 
 I would recommend creating a virtual environment in this directory to install the dependencies. See [Instructions](#Instructions).
+
+# Web UI Site
+
+I also made a small frontend that communicates with the server, this essentially replaces the CLI app with a webpage that does the same things.
+
+The site runs on port 80. I use a small Nginx server to serve the static files and host them.
+
+The site can be accessed at
+```
+http://localhost:80/
+```
+
+Navigate to it in your favourite browser.
+

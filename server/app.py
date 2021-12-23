@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 from queries import get_attrition, get_percentage_of_attrition_that_worked_overtime, insert_row
+from flask_cors import CORS
 from flask import Flask, jsonify, request
 import psycopg2
 import os
 
 
 app = Flask(__name__)
-
+# This is just for the demo, configure CORS properly in production!
+CORS(app)
 
 connection = psycopg2.connect(
     host=os.getenv('POSTGRES_HOST'),
@@ -30,7 +32,7 @@ def attrition():
 @app.route('/attrition-overtime')
 def attrition_overtime():
     return jsonify({
-        'attrition-overtime': get_percentage_of_attrition_that_worked_overtime(cursor)
+        'attritionOvertime': get_percentage_of_attrition_that_worked_overtime(cursor)
     }), 200
 
 @app.route('/add-row', methods=['POST'])

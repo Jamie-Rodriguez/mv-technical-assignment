@@ -11,7 +11,7 @@ def get_attrition():
 
 def get_percentage_of_attrition_that_worked_overtime():
     response = requests.get(base_url + 'attrition-overtime')
-    print(f'Percentage of people with attrition, who also worked overtime: {response.json()["attrition-overtime"] * 100 :.2f}%')
+    print(f'Percentage of people with attrition, who also worked overtime: {response.json()["attritionOvertime"] * 100 :.2f}%')
 
 def add_employee():
     employee_number = int(input('Please enter employee number: '))
