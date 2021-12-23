@@ -36,6 +36,8 @@ const addEmployee = async event => {
         jsonBody[key] = value
     }
 
+    jsonBody.employeeNumber = Number(jsonBody.employeeNumber)
+
     // Cast the checkbox state to a boolean - why aren't checkboxes boolean??
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#attr-value
     jsonBody.attrition = jsonBody.attrition === 'on'

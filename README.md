@@ -117,6 +117,8 @@ POST http://localhost:8080/add-row
 
 As it says on the tin. Allows the user to add an employee to the database and record if they had attrition. I didn't add any other fields because it would quickly become extremely tedious to input manually and this is just a demonstration.
 
+If you "add" an employee that already exists, the operation will update the employee's `attrition` status i.e. it is an *upsert* operation.
+
 Example cURL request:
 ```bash
 curl --request POST \

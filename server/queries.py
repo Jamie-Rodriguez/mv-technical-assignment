@@ -21,6 +21,10 @@ def insert_row(cursor: psycopg2.extensions.cursor, employee_number: int, attriti
     cursor.execute("""
         INSERT INTO employees (employee_number, attrition)
         VALUES (%s, %s)
+        ON CONFLICT (employee_number)
+        DO UPDATE SET
+            employee_number = EXCLUDED.employee_number,
+            attrition = EXCLUDED.attrition
         RETURNING employee_number;
         """,
         (employee_number, attrition))
